@@ -20,7 +20,7 @@ console.log(path.normalize(__dirname + "/..") + "/views/layout");
 //express hbs engine
 app.set('view engine', 'hbs');*/
 
-
+//declaramos las rutas de las vistas, path.join une las rutas. ejemplo ./views/layout
 app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs', exphbs.engine({
 	defaultLayout: 'main',
@@ -29,7 +29,7 @@ app.engine('.hbs', exphbs.engine({
 	extname: '.hbs',
 	helpers: require('./libs/handlebars')
 }));
-
+//inicializamos el motor de handlebars
 app.set('view engine', 'hbs');
 
 
@@ -48,7 +48,7 @@ app.use(bodyParser.json());
 
 
 
-
+//rutas
 app.use(require('./routes'))
 
 /*//rutas
